@@ -69,4 +69,14 @@ describe "#translate" do
   # * write a test asserting that capitalized words are still capitalized (but with a different initial capital letter, of course)
   # * retain the punctuation from the original phrase
 
+  it "corrects capitalization after translation" do
+    s = translate("King Koopa")
+    expect(s).to eq("Ingkay Oopakay")
+  end
+
+  it "punctuates at the ends of words" do
+    s = translate("Mario, you must defeat Bowser- swiftly!")
+    expect(s).to eq("Ariomay, ouyay ustmay efeatday Owserbay- iftlysway!")
+  end
+
 end
